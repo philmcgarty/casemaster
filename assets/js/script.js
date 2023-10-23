@@ -1,6 +1,24 @@
+// focus on text input box
+document.getElementById("textInput").focus()
+
 // console.log("Connected")
 function displayOutput(newText){
-    document.getElementById("textOutput").value = newText;
+    let textOutput = document.getElementById("textOutput");
+    textOutput.value = newText;
+    // focuses on translated text and highlights/selects it
+    textOutput.focus();
+    textOutput.select();
+}
+
+// // Copy button
+const copyButton = document.getElementById("copyText");
+copyText.addEventListener("click", copyFunction);
+
+function copyFunction(){
+    // Get the text field
+  let copyText = document.getElementById("textOutput");
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
 }
 
 // All caps
@@ -9,7 +27,7 @@ capsButton.addEventListener("click", capsFunction);
 
 function capsFunction() {
     let textInput = document.getElementById("textInput").value.toUpperCase();
-  console.log(textInput);
+//   console.log(textInput);
   displayOutput(textInput);
 }
 
@@ -19,7 +37,7 @@ lowercaseButton.addEventListener("click", lowFunction);
 
 function lowFunction() {
     let textInput = document.getElementById("textInput").value.toLowerCase();
-  console.log(textInput);
+//   console.log(textInput);
   displayOutput(textInput);
 }
 
@@ -37,7 +55,7 @@ firstCaps.addEventListener("click", firstFunction);
 
 function firstFunction() {
     let textInput = document.getElementById("textInput").value;
-    console.log(titleCase(textInput));
+    // console.log(titleCase(textInput));
     displayOutput(titleCase(textInput));
 }
 
