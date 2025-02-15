@@ -2,15 +2,15 @@
 document.getElementById("textInput").focus()
 
 // console.log("Connected")
-function displayOutput(newText){
-    let textOutput = document.getElementById("textOutput");
+function displayOutput(newText,displayArea){
+    let textOutput = document.getElementById(displayArea);
     textOutput.value = newText;
     // focuses on translated text and highlights/selects it
     textOutput.focus();
     textOutput.select();
 }
 
-// // Copy button
+// Copy button
 const copyButton = document.getElementById("copyText");
 copyText.addEventListener("click", copyFunction);
 
@@ -28,7 +28,7 @@ capsButton.addEventListener("click", capsFunction);
 function capsFunction() {
     let textInput = document.getElementById("textInput").value.toUpperCase();
 //   console.log(textInput);
-  displayOutput(textInput);
+  displayOutput(textInput,"textOutput");
 }
 
 // Lowercase
@@ -38,7 +38,7 @@ lowercaseButton.addEventListener("click", lowFunction);
 function lowFunction() {
     let textInput = document.getElementById("textInput").value.toLowerCase();
 //   console.log(textInput);
-  displayOutput(textInput);
+  displayOutput(textInput,"textOutput");
 }
 
 // First Letter Caps
@@ -56,6 +56,35 @@ firstCaps.addEventListener("click", firstFunction);
 function firstFunction() {
     let textInput = document.getElementById("textInput").value;
     // console.log(titleCase(textInput));
-    displayOutput(titleCase(textInput));
+    displayOutput(titleCase(textInput),"textOutput");
 }
 
+
+// NUMBER FORMATTING FUNCTIONS BELOW
+
+// Format input number
+function numberFunction() {
+    let number = document.getElementById("numberInput").value;
+    // console.log(number);
+    formattedNumber = parseInt(number).toLocaleString();
+    // console.log(formattedNumber);
+    displayOutput(formattedNumber,"numberInput");
+    let copyNumber = document.getElementById("numberInput");
+    // Copy the text inside the text field
+   navigator.clipboard.writeText(copyNumber.value);
+}
+
+// Event listener for number input button
+const addCommas = document.getElementById("addCommas");
+addCommas.addEventListener("click", numberFunction);
+
+// // Number Copy button
+// const numberCopyButton = document.getElementById("copyNumber");
+// copyNumber.addEventListener("click", numberCopyFunction);
+
+// function numberCopyFunction(){
+//     // Get the text field
+//   let copyNumber = document.getElementById("numberOutput");
+//    // Copy the text inside the text field
+//   navigator.clipboard.writeText(copyNumber.value);
+// }

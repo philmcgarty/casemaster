@@ -5,40 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Case Master</title>
 </head>
 
 <body>
-    <header>
-        <h1>Case Master</h1>
-    </header>
-    <main>
-        <div class="inputArea">
-            <form>
-                <label for="textInput"></label>
-                <textarea id="textInput" name="textInput" placeholder="Enter text here"></textarea>
-                <div>
-                    <button id="caps" type="button">ALL CAPS</button>
-                    <button id="lower" type="button">all lowercase</button>
-                    <button id="firstUpper" type="button">First Letter</button>
-                </div>
-            </form>
-        </div>
-        <div class="outputArea">
-            <textarea id="textOutput" name="textOutput"></textarea>
-            <div>
-                <button id="copyText" type="button">Copy to clipboard</button>
+    <div class="container p-5 my-5 bg-dark text-white">
+        <header>
+            <h1>Formatting Tools</h1>
+        </header>
+        <main>
+            <!-- Text formatting section -->
+            <div class="inputArea">
+                <h2>Case Master</h2>
+                <form>
+                    <label for="textInput"></label>
+                    <textarea class="form-control" id="textInput" name="textInput"
+                        placeholder="Enter text here"></textarea>
+                    <div>
+                        <button class="btn btn-primary" id="caps" type="button">ALL CAPS</button>
+                        <button class="btn btn-primary" id="lower" type="button">all lowercase</button>
+                        <button class="btn btn-primary" id="firstUpper" type="button">First Letter</button>
+                    </div>
+                </form>
             </div>
+            <div class="outputArea">
+                <textarea class="form-control" id="textOutput" name="textOutput"></textarea>
+                <div>
+                    <button class="btn btn-success" id="copyText" type="button">Copy to clipboard</button>
+                </div>
+            </div>
+            <!-- Number formatting section -->
+            <div class="numberInputArea">
+                <h2>Number Formatter</h2>
+                <form>
+                    <label for="numberInput"></label>
+                    <textarea class="form-control" id="numberInput" name="numberInput" placeholder="Enter number here"></textarea>
+                    <div>
+                        <button class="btn btn-success" id="addCommas" type="button">Add Commas & Copy to Clipboard</button>
+                    </div>
+                </form>
 
-        </div>
-    </main>
+            </div>
+            <!-- <div class="numberOutputArea">
+                <textarea class="form-control" id="numberOutput" name="numberOutput"></textarea>
+                <div>
+                    <button class="btn btn-success" id="copyNumber" type="button">Copy to clipboard</button>
+                </div>
+            </div> -->
+        </main>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
 <!-- improvements
-1 Highlight/focus textbox on load - done
-2 Hightlight/focus new text on button press - done
+√ 1 Highlight/focus textbox on load - done √
+√2 Hightlight/focus new text on button press - done √
 3 Style
-4 Add copy button - done
+√4 Add copy button - done √
 5 Tweak user interface
  -->
