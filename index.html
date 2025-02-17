@@ -16,6 +16,18 @@
             <h1>Formatting Tools</h1>
         </header>
         <main>
+            <!-- Number formatting section -->
+            <div class="numberInputArea">
+                <h2>Number Formatter</h2>
+                <form>
+                    <label for="numberInput"></label>
+                    <textarea class="form-control" id="numberInput" name="numberInput" placeholder="Enter number here"></textarea>
+                    <div>
+                        <button class="btn btn-success" id="addCommas" type="button">Add Commas & Copy to Clipboard</button>
+                    </div>
+                </form>
+
+            </div>
             <!-- Text formatting section -->
             <div class="inputArea">
                 <h2>Case Master</h2>
@@ -35,25 +47,7 @@
                 <div>
                     <button class="btn btn-success" id="copyText" type="button">Copy to clipboard</button>
                 </div>
-            </div>
-            <!-- Number formatting section -->
-            <div class="numberInputArea">
-                <h2>Number Formatter</h2>
-                <form>
-                    <label for="numberInput"></label>
-                    <textarea class="form-control" id="numberInput" name="numberInput" placeholder="Enter number here"></textarea>
-                    <div>
-                        <button class="btn btn-success" id="addCommas" type="button">Add Commas & Copy to Clipboard</button>
-                    </div>
-                </form>
-
-            </div>
-            <!-- <div class="numberOutputArea">
-                <textarea class="form-control" id="numberOutput" name="numberOutput"></textarea>
-                <div>
-                    <button class="btn btn-success" id="copyNumber" type="button">Copy to clipboard</button>
-                </div>
-            </div> -->
+            </div>           
         </main>
     </div>
     <script src="./assets/js/script.js"></script>

@@ -2,7 +2,7 @@
 document.getElementById("textInput").focus()
 
 // console.log("Connected")
-function displayOutput(newText,displayArea){
+function displayOutput(newText, displayArea) {
     let textOutput = document.getElementById(displayArea);
     textOutput.value = newText;
     // focuses on translated text and highlights/selects it
@@ -14,11 +14,11 @@ function displayOutput(newText,displayArea){
 const copyButton = document.getElementById("copyText");
 copyText.addEventListener("click", copyFunction);
 
-function copyFunction(){
+function copyFunction() {
     // Get the text field
-  let copyText = document.getElementById("textOutput");
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
+    let copyText = document.getElementById("textOutput");
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
 }
 
 // All caps
@@ -27,8 +27,8 @@ capsButton.addEventListener("click", capsFunction);
 
 function capsFunction() {
     let textInput = document.getElementById("textInput").value.toUpperCase();
-//   console.log(textInput);
-  displayOutput(textInput,"textOutput");
+    //   console.log(textInput);
+    displayOutput(textInput, "textOutput");
 }
 
 // Lowercase
@@ -37,18 +37,18 @@ lowercaseButton.addEventListener("click", lowFunction);
 
 function lowFunction() {
     let textInput = document.getElementById("textInput").value.toLowerCase();
-//   console.log(textInput);
-  displayOutput(textInput,"textOutput");
+    //   console.log(textInput);
+    displayOutput(textInput, "textOutput");
 }
 
 // First Letter Caps
 function titleCase(str) {
     var splitStr = str.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
-    return splitStr.join(' '); 
- }
+    return splitStr.join(' ');
+}
 
 const firstCaps = document.getElementById("firstUpper");
 firstCaps.addEventListener("click", firstFunction);
@@ -56,7 +56,7 @@ firstCaps.addEventListener("click", firstFunction);
 function firstFunction() {
     let textInput = document.getElementById("textInput").value;
     // console.log(titleCase(textInput));
-    displayOutput(titleCase(textInput),"textOutput");
+    displayOutput(titleCase(textInput), "textOutput");
 }
 
 
@@ -68,10 +68,10 @@ function numberFunction() {
     // console.log(number);
     formattedNumber = parseInt(number).toLocaleString();
     // console.log(formattedNumber);
-    displayOutput(formattedNumber,"numberInput");
+    displayOutput(formattedNumber, "numberInput");
     let copyNumber = document.getElementById("numberInput");
     // Copy the text inside the text field
-   navigator.clipboard.writeText(copyNumber.value);
+    navigator.clipboard.writeText(copyNumber.value);
 }
 
 // Event listener for number input button
