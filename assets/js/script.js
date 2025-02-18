@@ -68,10 +68,10 @@ function numberFunction() {
     // console.log(number);
     formattedNumber = parseInt(number).toLocaleString();
     // console.log(formattedNumber);
-    displayOutput(formattedNumber, "numberInput");
-    let copyNumber = document.getElementById("numberInput");
+    displayOutput("", "numberInput");
+    // let copyNumber = document.getElementById("numberInput");
     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyNumber.value);
+    navigator.clipboard.writeText(formattedNumber);
 }
 
 // Event listener for number input button
