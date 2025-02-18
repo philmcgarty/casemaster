@@ -68,10 +68,15 @@ function numberFunction() {
     // console.log(number);
     formattedNumber = parseInt(number).toLocaleString();
     // console.log(formattedNumber);
+    var regex=/^[a-zA-Z]+$/;
+    if (formattedNumber.match(regex)){
+        displayOutput("Enter numbers only", "numberInput");
+    }else{
     displayOutput("", "numberInput");
     // let copyNumber = document.getElementById("numberInput");
     // Copy the text inside the text field
     navigator.clipboard.writeText(formattedNumber);
+    }
 }
 
 // Event listener for number input button
