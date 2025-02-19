@@ -83,13 +83,16 @@ function numberFunction() {
 const addCommas = document.getElementById("addCommas");
 addCommas.addEventListener("click", numberFunction);
 
-// // Number Copy button
-// const numberCopyButton = document.getElementById("copyNumber");
-// copyNumber.addEventListener("click", numberCopyFunction);
+// Get the input field
+var input = document.getElementById("numberInput");
 
-// function numberCopyFunction(){
-//     // Get the text field
-//   let copyNumber = document.getElementById("numberOutput");
-//    // Copy the text inside the text field
-//   navigator.clipboard.writeText(copyNumber.value);
-// }
+// Execute number input when the user presses enter key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("addCommas").click();
+  }
+});
