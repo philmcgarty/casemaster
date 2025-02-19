@@ -67,15 +67,19 @@ function numberFunction() {
     let number = document.getElementById("numberInput").value;
     // console.log(number);
     formattedNumber = parseInt(number).toLocaleString();
-    // console.log(formattedNumber);
-    var regex=/^[a-zA-Z]+$/;
-    if (formattedNumber.match(regex)){
+
+    var regex = /^[a-zA-Z]+$/;
+    if (formattedNumber.match(regex)) {
         displayOutput("Enter numbers only", "numberInput");
-    }else{
-    displayOutput("", "numberInput");
-    // let copyNumber = document.getElementById("numberInput");
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(formattedNumber);
+    } else {
+        displayOutput("", "numberInput");
+        let successMessage = document.getElementById("successMessage");
+        successMessage.innerHTML = formattedNumber + " copied to clipboard";
+        //console.log(formattedNumber);
+
+        // let copyNumber = document.getElementById("numberInput");
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(formattedNumber);
     }
 }
 
@@ -84,15 +88,24 @@ const addCommas = document.getElementById("addCommas");
 addCommas.addEventListener("click", numberFunction);
 
 // Get the input field
-var input = document.getElementById("numberInput");
-
+let input = document.getElementById("numberInput");
+// Execute number input when the user releases "v" key on the keyboard
+input.addEventListener("keyup", function (event) {
+    // If the user releases the "v" key on the keyboard
+    if (event.key === "v") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("addCommas").click();
+    }
+});
 // Execute number input when the user presses enter key on the keyboard
-input.addEventListener("keypress", function(event) {
-  // If the user presses the "Enter" key on the keyboard
-  if (event.key === "Enter") {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("addCommas").click();
-  }
+input.addEventListener("keypress", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("addCommas").click();
+    }
 });
