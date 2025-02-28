@@ -1,5 +1,5 @@
 // focus on text input box
-document.getElementById("textInput").focus()
+document.getElementById("numberInput").focus()
 
 // console.log("Connected")
 function displayOutput(newText, displayArea) {
