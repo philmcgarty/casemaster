@@ -87,7 +87,7 @@ function numberFunction() {
 function numbersFunction() {
     let numbers = document.getElementById("multiNumberInput").value;
     // convert list of numbers into array
-    let numberList = numbers.split(/\r?\n/);
+    let numberList = numbers.split(/\s+/);
     let formattedList = [];
     // Loop through array
     for (var i = 0; i < numberList.length; i++) {
