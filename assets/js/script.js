@@ -83,6 +83,29 @@ function numberFunction() {
     }
 }
 
+//Format multiple input numbers
+function numbersFunction() {
+    let numbers = document.getElementById("multiNumberInput").value;
+    // convert list of numbers into array
+    let numberList = numbers.split(/\r?\n/);
+    let formattedList = [];
+    // Loop through array
+    for (var i = 0; i < numberList.length; i++) {
+        // console.log(parseInt(numberList[i]).toLocaleString());
+        formattedList.push(parseInt(numberList[i]).toLocaleString());
+    }
+    // console.log("Final list " + formattedList);
+    document.getElementById("successMessageMulti").innerHTML = formattedList.join("<br>") + "<br>";
+    let formattedNumbers = document.getElementById("successMessageMulti").innerText;
+    displayOutput(formattedNumbers, "multiNumberInput");
+    console.log(document.getElementById("successMessageMulti").innerText);
+}
+
+
+// Event listener for multiple number input button
+const numbersInput = document.getElementById("addCommasMulti");
+addCommasMulti.addEventListener("click", numbersFunction);
+
 // Event listener for number input button
 const addCommas = document.getElementById("addCommas");
 addCommas.addEventListener("click", numberFunction);
